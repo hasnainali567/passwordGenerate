@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="main">
+        <div id="passDisplay">
+            <input id="pass" type="text" readonly disabled>
+            <i class="fa-regular fa-eye dnone" id="eyeOpen"></i>
+            <i class="fa-regular fa-eye-slash" id="eyeClose"></i>
+        </div>
+
+        <div id="len">
+            <label for="slider">Password Length:</label>
+            <div id="slide">
+                <input type="range" id="slider" min="8" max="50" value="8">
+                <p id="lenDisplay">Length: 8</p>
+            </div>
+        </div>
+
+        <div class="checks">
+            <label for="char_A">Include Uppercase Letters (A....Z) :</label>
+            <input type="checkbox" id="char_A" checked> 
+        </div>
+
+        <div class="checks">
+            <label for="char_a">Include Lowercase Letters (a....z) :</label>
+            <input type="checkbox" id="char_a">
+        </div>
+
+        <div class="checks">
+            <label for="num">Include Numbers (0....9) :</label>
+            <input type="checkbox" id="num">
+        </div>
+
+        <div class="checks">
+            <label for="symbol">Include Symbols (!....@) :</label>
+            <input type="checkbox" id="symbol">
+        </div>
+
+        <div class="checks">
+            <label for="symbol">Exclude Duplicate :</label>
+            <input type="checkbox" id="duplicate">
+        </div>
+
+        <button id="gen">Generate</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
