@@ -11,6 +11,7 @@
 body {
     width: 100vw;
     height: 100vh;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,7 +58,6 @@ body {
     color: #333;
     font-weight: 500;
     padding: 5px;
-    text-overflow: ellipsis;
 }
 
 #len {
@@ -68,9 +68,21 @@ body {
     color: #444;
 }
 
+#len > label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #444;
+}
+
+#lenDisplay{
+    color: #555;
+    font-weight: 500;
+}
+
 #slide {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 20px;
 }
 
@@ -100,13 +112,18 @@ body {
     align-items: center;
     gap: 20px;
     font-size: 1rem;
-    color: #444;
+    font-weight: 500;
+    color: #666;
+}
+
+.checks > label{
+    color: #888;
 }
 
 .checks input[type="checkbox"] {
     appearance: none;
-    width: 50px;
-    height: 28px;
+    min-width: 50px;
+    min-height: 28px;
     background: #e0e0e0;
     border-radius: 14px;
     position: relative;
@@ -137,6 +154,7 @@ body {
     padding: 12px 24px;
     border-radius: 30px;
     font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
     background-color: #6c757d;
     color: #ffffff;
@@ -151,4 +169,75 @@ body {
 
 #gen:active {
     background-color: #4e555b;
+}
+
+
+@media screen and (max-width: 380px) {
+    *{
+        font-size: .95rem;
+    }
+
+    #main {
+        padding: 20px;
+        gap: 10px;
+    }
+
+    #passDisplay {
+        padding: 12px;
+    }
+    #pass {
+        font-size: 1.2rem;
+        padding: 0px;
+    }
+
+    .fa-eye,
+    .fa-eye-slash {
+        font-size: 1.2rem !important;
+    }
+
+    #len {
+        gap: 12px;
+    }
+
+    #len > label {
+        font-size: 1rem;
+    }
+
+    #slide {
+        flex-direction: column;
+        gap: 8px;
+    }
+    #slide > input{
+        width: 100%;
+    }
+
+    .checks input[type="checkbox"] {
+        appearance: none;
+        min-width: 40px;
+        min-height: 22.4px;
+        background: #e0e0e0;
+        border-radius: 14px;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .checks input[type="checkbox"]::after {
+        content: "";
+        position: absolute;
+        top: 2.4px;
+        left: 2.4px;
+        width: 17.6px;
+        height: 17.6px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        transition: all 0.3s;
+    }
+    
+    .checks input[type="checkbox"]:checked {
+        background-color: #5b5f65;
+    }
+    
+    .checks input[type="checkbox"]:checked::after {
+        transform: translateX(17.6px);
+    }
 }
